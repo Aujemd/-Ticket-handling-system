@@ -9,6 +9,7 @@
         "vlucas/phpdotenv": "^4.1",
         "aura/router": "^3.1",
         "laminas/laminas-diactoros": "^2.2",
-        "twig/twig": "^3.0"
+        "twig/twig": "^3.0",
+        "robmorgan/phinx": "^0.11.4"
     }
 }

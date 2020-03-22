@@ -47,6 +47,11 @@ $map->get('index', getenv('BASE_URL'), [
     'action' => 'indexAction',
 ]);
 
+$map->post('saveUsers', getenv('BASE_URL').'SignUp',[
+    'controller' => 'App\Controllers\UsersController',
+    'action' => 'getUsersAction',
+ ]);
+
 $matcher = $routerContainer->getMatcher();
 
 $route = $matcher->match($request);

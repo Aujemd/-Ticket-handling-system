@@ -1,0 +1,51 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+	<div class="container text-center">
+		<h1 class="text-primary">Registro</h1>
+		<form action="/Proyecto_2_Johan_Mora/SignUp" method="post">
+			<div class="form-row">
+				<div class="col m-3">
+					<input name="names" type="text" class="form-control" placeholder="Nombres">
+				</div>
+				<div class="col m-3">
+					<input name="lastnames" type="text" class="form-control" placeholder="Apellidos">
+				</div>
+			</div>
+			<div class="form-row">
+				<div class="col m-3">
+					<input name="vid" type="text" class="form-control" placeholder="Cédula">
+				</div>
+				<div class="col m-3">
+					<input name="address" type="text" class="form-control" placeholder="Dirección">
+				</div>
+			</div>
+			<div class="form-row">
+				<div class="col m-3">
+					<select class="custom-select" name="sex">
+						<option selected disabled value="">Sexo</option>
+						<option value="Hombre">Hombre</option>
+						<option value="Mujer">Mujer</option>
+					</select>
+				</div>
+				<div class="col m-3">
+					<input name="contact" type="text" class="form-control" placeholder="Teléfono de contacto">
+				</div>
+			</div>
+			<div class="form-row">
+				<div class="col m-3">
+					<input name="email" type="text" class="form-control" placeholder="Correo">
+				</div>
+				<div class="col m-3">
+					<input name="user" type="text" class="form-control" placeholder="Nombre de Usuario">
+				</div>
+			</div>
+			<div class="form-row">
+				<div class="col m-3">
+					<input name="password" type="password" class="form-control" placeholder="Contraseña">
+				</div>
+			</div>
+			<button type="submit" class="btn btn-primary">Sign Up</button>
+		</form>
+	</div>
+{% endblock %}

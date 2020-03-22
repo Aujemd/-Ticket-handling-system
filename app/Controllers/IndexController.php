@@ -4,6 +4,6 @@ namespace App\Controllers;
 
 class IndexController extends BaseController{
     public function indexAction(){
-        return $this->renderHTML('index.twig');
+        return $this->renderHTML('signUp.twig');
     }
 }
