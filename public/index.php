@@ -46,7 +46,14 @@ $map->get('index', getenv('BASE_URL'), [
     'controller' => 'App\Controllers\IndexController',
     'action' => 'indexAction',
 ]);
-
+$map->get('SignUp', getenv('BASE_URL').'SignUp', [
+    'controller' => 'App\Controllers\UsersController',
+    'action' => 'getUsersAction',
+]);
+$map->get('dashboard', getenv('BASE_URL').'Dashboard', [
+    'controller' => 'App\Controllers\DashboardController',
+    'action' => 'getDashboardAction',
+]);
 $map->post('saveUsers', getenv('BASE_URL').'SignUp',[
     'controller' => 'App\Controllers\UsersController',
     'action' => 'getUsersAction',

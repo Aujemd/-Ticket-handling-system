@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 use App\Models\{User};
+use Laminas\Diactoros\Response\RedirectResponse;
 
 class UsersController extends BaseController{
 
@@ -11,7 +12,6 @@ class UsersController extends BaseController{
             $postData = $request->getParsedBody();
             
             try{
-
                 $postData = $request->getParsedBody();
 
                 $user = new User();
@@ -23,13 +23,16 @@ class UsersController extends BaseController{
                 $user->contact = $postData['contact'];
                 $user->email = $postData['email'];
                 $user->user = $postData['user'];
-                $user->password = $postData['password'];
+                $user->password = password_hash($postData['password'], PASSWORD_DEFAULT);
                 $user->save();
                 
+                return new RedirectResponse(getenv('BASE_URL').'Dashboard');
             }catch(\Exception $e){
                 var_dump($e->m);
             }
         }
-        return $this->renderHTML('signUp.twig');
+        return $this->renderHTML('signUp.twig', [
+            'url' => getenv('BASE_URL'),
+        ]);
     }
 }
