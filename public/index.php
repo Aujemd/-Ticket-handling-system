@@ -5,6 +5,8 @@ require_once '../vendor/autoload.php';
 use Illuminate\Database\Capsule\Manager as Capsule;
 use Aura\Router\RouterContainer;
 
+session_start();//Inicializa la sesión
+
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__.'/..');
 $dotenv->load(); 
 
@@ -54,10 +56,18 @@ $map->get('dashboard', getenv('BASE_URL').'Dashboard', [
     'controller' => 'App\Controllers\DashboardController',
     'action' => 'getDashboardAction',
 ]);
+$map->get('login', getenv('BASE_URL').'Login', [
+    'controller' => 'App\Controllers\AuthController',
+    'action' => 'getLoginAction',
+]);
 $map->post('saveUsers', getenv('BASE_URL').'SignUp',[
     'controller' => 'App\Controllers\UsersController',
     'action' => 'getUsersAction',
  ]);
+ $map->post('auth', getenv('BASE_URL').'Login',[
+    'controller' => 'App\Controllers\AuthController',
+    'action' => 'getLoginAction',
+]);
 
 $matcher = $routerContainer->getMatcher();
 

@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Controllers;
+
 use App\Models\{User};
 use Laminas\Diactoros\Response\RedirectResponse;
 
