@@ -60,6 +60,10 @@ $map->get('login', getenv('BASE_URL').'Login', [
     'controller' => 'App\Controllers\AuthController',
     'action' => 'getLoginAction',
 ]);
+$map->get('ticketRegistry', getenv('BASE_URL').'TicketRegistry', [
+    'controller' => 'App\Controllers\TicketRegistryController',
+    'action' => 'getTicketRegistryAction',
+]);
 $map->post('saveUsers', getenv('BASE_URL').'SignUp',[
     'controller' => 'App\Controllers\UsersController',
     'action' => 'getUsersAction',
@@ -67,6 +71,10 @@ $map->post('saveUsers', getenv('BASE_URL').'SignUp',[
  $map->post('auth', getenv('BASE_URL').'Login',[
     'controller' => 'App\Controllers\AuthController',
     'action' => 'getLoginAction',
+]);
+$map->post('saveTicket', getenv('BASE_URL').'TicketRegistry',[
+    'controller' => 'App\Controllers\TicketRegistryController',
+    'action' => 'getTicketRegistryAction',
 ]);
 
 $matcher = $routerContainer->getMatcher();

@@ -1,0 +1,31 @@
+{% extends "layout.twig" %}
+{% block content %}
+<div class="container text-center">
+		<h1 class="text-primary">Registrar Boleto</h1>
+		<form action="{{url}}TicketRegistry" method="post">
+			<div class="form-row">
+				<div class="col m-3">
+					<input name="serial" type="text" class="form-control" placeholder="Serial">
+				</div>
+				<div class="col m-3">
+					<input name="eventName" type="text" class="form-control" placeholder="Nombre del evento">
+				</div>
+			</div>
+			<div class="form-row">
+				<div class="col m-3">
+					<input name="date" type="text" class="form-control" placeholder="Fecha DD/MM/AA">
+				</div>
+				<div class="col m-3">
+					<select class="custom-select" name="ubication">
+						<option selected disabled value="">Ubicación</option>
+						<option value="Altos">Altos</option>
+						<option value="Medios">Medios</option>
+                        <option value="VIP">VIP</option>
+                        <option value="Platino">Platino</option>
+					</select>
+				</div>
+			</div>
+			<button type="submit" class="btn btn-primary">Registrar</button>
+		</form>
+	</div>
+{% endblock %}
