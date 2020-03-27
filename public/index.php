@@ -64,6 +64,10 @@ $map->get('ticketRegistry', getenv('BASE_URL').'TicketRegistry', [
     'controller' => 'App\Controllers\TicketRegistryController',
     'action' => 'getTicketRegistryAction',
 ]);
+$map->get('logout', getenv('BASE_URL').'Logout',[
+    'controller' => 'App\Controllers\AuthController',
+    'action' => 'getLogout',
+]);
 $map->post('saveUsers', getenv('BASE_URL').'SignUp',[
     'controller' => 'App\Controllers\UsersController',
     'action' => 'getUsersAction',
