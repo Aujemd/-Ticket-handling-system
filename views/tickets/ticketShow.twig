@@ -1,0 +1,15 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">{{ticket.eventName}}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">{{ticket.serial}}</h6>
+    <p class="card-text">{{ticket.ubication}}</p>
+    <p href="#" class="card-text muted">{{ticket.date}}</p>
+  </div>
+</div>
+
+  <a class="btn btn-primary" href="{{url}}Dashboard" role="button">Confirmar</a>
+
+{% endblock %}

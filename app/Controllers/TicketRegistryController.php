@@ -24,12 +24,15 @@ class TicketRegistryController extends BaseController{
                 $ticket->ubication = $postData['ubication'];
                 $ticket->user_id = $_SESSION['userId'];
                 $ticket->save();
-                return new RedirectResponse(getenv('BASE_URL').'Dashboard');
+                return $this->renderHTML('tickets/ticketShow.twig', [
+                    'url' => getenv('BASE_URL'),
+                    'ticket' => $ticket,
+                ]);
             }catch(\Exception $e){
                 var_dump($e->m);
             }
         }
-        return $this->renderHTML('ticketRegistry.twig', [
+        return $this->renderHTML('tickets/ticketCreate.twig', [
             'url' => getenv('BASE_URL'),
         ]);
     }
