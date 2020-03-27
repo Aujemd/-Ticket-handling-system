@@ -1,0 +1,31 @@
+{% extends "layout.twig" %}
+{% block content %}
+<div class="container text-center">
+		<h1 class="text-primary">Editar Boleto</h1>
+		<form action="{{url}}Update/Ticket?id={{ticket.id}}" method="post">
+			<div class="form-row">
+				<div class="col m-3">
+					<input name="serial" type="text" class="form-control" value="{{ticket.serial}}">
+				</div>
+				<div class="col m-3">
+					<input name="eventName" type="text" class="form-control" value="{{ticket.eventName}}">
+				</div>
+			</div>
+			<div class="form-row">
+				<div class="col m-3">
+					<input name="date" type="text" class="form-control" value="{{ticket.date}}">
+				</div>
+				<div class="col m-3">
+					<select class="custom-select" name="ubication">
+						<option selected value="{{ticket.ubication}}">{{ticket.ubication}}</option>
+						<option value="Altos">Altos</option>
+						<option value="Medios">Medios</option>
+                        <option value="VIP">VIP</option>
+                        <option value="Platino">Platino</option>
+					</select>
+				</div>
+			</div>
+			<button type="submit" class="btn btn-primary">Registrar</button>
+		</form>
+	</div>
+{% endblock %}

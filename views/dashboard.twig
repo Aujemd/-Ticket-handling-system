@@ -30,12 +30,9 @@
       <td>{{ticket.user.vid}}</td>
       <td>{{ticket.eventName}}</td>
       <td>{{ticket.ubication}}</td>
-      <td><a class="btn btn-success" href="{{url}}Logout" role="button">Ver</a>
-      <a class="btn btn-primary" href="{{url}}Logout" role="button">Editar</a>
-      <a class="btn btn-danger" href="{{url}}Logout" role="button">Eliminar</a></td>
-
-
-
+      <td><a class="btn btn-success" href="{{url}}Show/Ticket?id={{ticket.id}}" role="button">Ver</a>
+      <a class="btn btn-primary" href="{{url}}Edit/Ticket?id={{ticket.id}}" role="button">Editar</a>
+      <a class="btn btn-danger" href="{{url}}Delete/Ticket?id={{ticket.id}}" role="button">Eliminar</a></td>
     </tr>
     {% endfor %}
   </tbody>
