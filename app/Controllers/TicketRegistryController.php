@@ -11,6 +11,7 @@ use Laminas\Diactoros\Response\RedirectResponse;
 class TicketRegistryController extends BaseController{
 
     public function getTicketRegistryAction($request){
+        $user = User::where('id', $_SESSION['userId'])->first();
 
         if($request->getMethod() == 'POST'){
             $postData = $request->getParsedBody();
@@ -24,7 +25,6 @@ class TicketRegistryController extends BaseController{
                 $ticket->ubication = $postData['ubication'];
                 $ticket->user_id = $_SESSION['userId'];
                 $ticket->save();
-                $user = User::where('id', $_SESSION['userId'])->first();
                 return $this->renderHTML('tickets/ticketShow.twig', [
                     'url' => getenv('BASE_URL').'Dashboard/User',
                     'ticket' => $ticket,

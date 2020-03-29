@@ -16,6 +16,7 @@ class AdminController extends BaseController{
     }
 
     public function getSaveEventAction($request){
+        $user = User::where('id', $_SESSION['userId'])->first();
         $postData = $request->getParsedBody();
         $event  = new Event();
             try{
@@ -26,6 +27,12 @@ class AdminController extends BaseController{
                 $event->vip = $postData['vip'];
                 $event->platino = $postData['platino'];
                 $event->save();
+                return $this->renderHTML('admins/showEvent.twig', [
+                    'url' => getenv('BASE_URL').'Dashboard/Admin',
+                    'event' => $event,
+                    'user' => $user,
+                    'urlInit' => getenv('URL_INIT_ADMIN'),
+                ]);
                 return new RedirectResponse(getenv('BASE_URL').'Dashboard/Admin');
             }catch(\Exception $e){
                 var_dump($e->m);

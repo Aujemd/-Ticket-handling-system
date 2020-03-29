@@ -1,0 +1,14 @@
+{% extends "users/dashboard.twig" %}
+
+{% block mostrar %}
+	<div class="col-md-6 rounded h-50 morado-claro d-flex justify-content-center align-items-center flex-wrap">
+		<div class="d-flex justify-content-center align-items-center flex-wrap">
+			<h2 class="text-white w-100">Nombre del Evento: {{event.eventName}}</h2>
+			<h3 class="text-white w-100">Cantidad de Altos: {{event.altos}}</h3>
+			<h3 class="text-white w-100">Cantidad de Medios: {{event.medios}}</h3>
+			<h3 class="text-white w-100">Cantidad de VIP: {{event.vip}}</h3>
+			<h3 class="text-white w-100 mb-5">Cantidad de Platino: {{event.platino}}</h3>
+			<a class="morado-mas-claro-text" href="{{urlInit}}" role="button">Ir al Menu Principal</a>
+		</div>
+	</div>
+{% endblock %}
