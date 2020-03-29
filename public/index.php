@@ -56,10 +56,6 @@ $map->get('dashboardUser', getenv('BASE_URL').'Dashboard/Admin', [
     'controller' => 'App\Controllers\DashboardController',
     'action' => 'getDashboardAdminAction',
 ]);
-$map->get('ticketRegistry', getenv('BASE_URL').'TicketRegistry', [
-    'controller' => 'App\Controllers\TicketRegistryController',
-    'action' => 'getTicketRegistryAction',
-]);
 $map->get('logout', getenv('BASE_URL').'Logout',[
     'controller' => 'App\Controllers\UsersController',
     'action' => 'getUsersLogoutAction',

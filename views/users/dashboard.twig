@@ -1,5 +1,20 @@
 {% extends "layout.twig" %}
 
 {% block content %}
-    <a class="btn btn-primary" href="{{url}}Logout" role="button">Logout</a>
+	<div class="row maxAltura m-0">
+		<div class="col-md-2 w-100 h-100 m-0 fondo-oscuro-medio">
+			<p class="gris-text mt-5 mb-5">Bienvenid@,
+				{{user.names}}</p>
+			<ul class="nav flex-column w-100">
+				<li class="nav-item">
+					<a class="nav-link gris-text" href="{{url}}Logout">Logout</a>
+				</li>
+			</ul>
+		</div>
+		<div class="fondo-oscuro col-md-10 w-100 h-100 m-0">
+			<div class="row h-100 d-flex justify-content-center align-items-center">
+          {% block mostrar %}{% endblock %}
+			</div>
+		</div>
+	</div>
 {% endblock %}

@@ -1,15 +1,13 @@
-{% extends "layout.twig" %}
+{% extends "users/dashboard.twig" %}
 
-{% block content %}
-<div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title">{{ticket.eventName}}</h5>
-    <h6 class="card-subtitle mb-2 text-muted">{{ticket.serial}}</h6>
-    <p class="card-text">{{ticket.ubication}}</p>
-    <p href="#" class="card-text muted">{{ticket.date}}</p>
-  </div>
-</div>
-
-  <a class="btn btn-primary" href="{{url}}Dashboard" role="button">Ir al Dashboard</a>
-
+{% block mostrar %}
+	<div class="col-md-6 rounded h-75 morado-claro d-flex justify-content-center align-items-center flex-wrap">
+		<div class="d-flex justify-content-center align-items-center flex-wrap text-center">
+			<h3 class="text-white w-100">{{ticket.eventName}}</h3>
+			<h3 class="text-white w-100">{{ticket.serial}}</h3>
+			<h3 class="morado-mas-claro-text w-100">{{ticket.ubication}}</h3>
+			<h3 class="morado-mas-claro-text w-100 mb-5">{{ticket.date}}</h3>
+			<a class="morado-mas-claro-text" href="{{url}}Dashboard/User" role="button">Ir al Dashboard</a>
+		</div>
+	</div>
 {% endblock %}
