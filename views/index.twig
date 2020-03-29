@@ -1,23 +1,64 @@
 {% extends "layout.twig" %}
 
 {% block content %}
-  <div class="row">
-  <div class="col-sm-4 m-5">
-      <div class="card text-center" style="width: 18rem;">
-        <div class="card-body">
-          <h5 class="card-title text-primary">Iniciar Sesión</h5>
-          <a href="{{url}}Login" class="btn btn-primary">Entrar</a>
-        </div>
-      </div>
-  </div>
-    
-  <div class="col-sm-4 m-5">
-      <div class="card text-center" style="width: 18rem;">
-        <div class="card-body">
-          <h5 class="card-title text-primary">Registrarse</h5>
-          <a href="{{url}}SignUp" class="btn btn-primary">Entrar</a>
-        </div>
-      </div>
-  </div>
-  </div>
+	<div class="row m-0 maxAltura d-flex justify-content-center align-items-center w-100">
+		<div class="col-md-3 m-5 fondo-oscuro-medio h-75 rounded d-flex justify-content-center align-items-center shadow-lg flex-wrap">
+			<form action="{{url}}Login" method="post" class="d-flex flex-wrap justify-content-center align-items-center">
+				<h3 class="text-white">Inicio de Sesión</h3>
+				<input name="user" type="text" class="fondo-oscuro-medio input w-100 mb-4 rounded mt-4 text-white" placeholder="Usuario">
+				<input name="password" type="password" class="fondo-oscuro-medio input w-100 mb-4 rounded text-white" placeholder="Contraseña">
+				<button type="submit" class="morado-claro input w-100 rounded text-white">Iniciar Sesión</button>
+			</form>
+		</div>
+
+		<div class="col-md-7 m-5 fondo-oscuro-medio h-75 rounded d-flex justify-content-center align-items-center shadow-lg flex-wrap">
+			<form action="{{url}}SignUp" method="post" class="w-100">
+				<h3 class="text-white text-center">Registrarse</h3>
+				<div class="form-row">
+					<div class="col-md-6">
+						<input name="names" type="text" class="fondo-oscuro-medio input  w-75 mt-4 SignUp text-white" placeholder="Nombres">
+					</div>
+					<div class="col-md-6">
+						<input name="lastnames" type="text" class="fondo-oscuro-medio input  w-75 mt-4 SignUp text-white" placeholder="Apellidos">
+					</div>
+				</div>
+				<div class="form-row d-flex flex-wrap justify-content-center align-items-center">
+					<div class="col-md-6">
+						<input name="vid" type="text" class="fondo-oscuro-medio input  w-75 mt-4 SignUp text-white" placeholder="Cédula">
+					</div>
+					<div class="col-md-6">
+						<input name="address" type="text" class="fondo-oscuro-medio input  w-75 mt-4 SignUp text-white" placeholder="Dirección">
+					</div>
+				</div>
+				<div class="form-row d-flex flex-wrap justify-content-center align-items-center">
+					<div class="col-md-6">
+						<select class="fondo-oscuro-medio input rounded w-75 mt-4 morado-text" name="sex">
+							<option selected disabled value="">Sexo</option>
+							<option value="Hombre">Hombre</option>
+							<option value="Mujer">Mujer</option>
+						</select>
+					</div>
+					<div class="col-md-6">
+						<input name="contact" type="text" class="fondo-oscuro-medio input   w-75 mt-4 SignUp text-white" placeholder="Teléfono de contacto">
+					</div>
+				</div>
+				<div class="form-row d-flex flex-wrap justify-content-center align-items-center">
+					<div class="col-md-6">
+						<input name="email" type="text" class="fondo-oscuro-medio input   w-75 mt-4 SignUp text-white" placeholder="Correo">
+					</div>
+					<div class="col-md-6">
+						<input name="user" type="text" class="fondo-oscuro-medio input   w-75 mt-4 SignUp text-white" placeholder="Nombre de Usuario">
+					</div>
+				</div>
+				<div class="form-row d-flex flex-wrap justify-content-center align-items-center">
+					<div class="col-md-6">
+						<input name="password" type="password" class="fondo-oscuro-medio input  w-75 mt-4 SignUp text-white" placeholder="Contraseña">
+					</div>
+					<div class="col-md-6">
+						<button type="submit" class="morado-claro input w-75 rounded text-white mt-4 SignUp">Registrarse</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
 {% endblock %}

@@ -48,10 +48,6 @@ $map->get('index', getenv('BASE_URL'), [
     'controller' => 'App\Controllers\IndexController',
     'action' => 'indexAction',
 ]);
-$map->get('SignUp', getenv('BASE_URL').'SignUp', [
-    'controller' => 'App\Controllers\UsersController',
-    'action' => 'getUsersSignUpAction',
-]);
 $map->get('dashboardAdmin', getenv('BASE_URL').'Dashboard/User', [
     'controller' => 'App\Controllers\DashboardController',
     'action' => 'getDashboardUserAction',
@@ -59,10 +55,6 @@ $map->get('dashboardAdmin', getenv('BASE_URL').'Dashboard/User', [
 $map->get('dashboardUser', getenv('BASE_URL').'Dashboard/Admin', [
     'controller' => 'App\Controllers\DashboardController',
     'action' => 'getDashboardAdminAction',
-]);
-$map->get('login', getenv('BASE_URL').'Login', [
-    'controller' => 'App\Controllers\UsersController',
-    'action' => 'getUsersLoginAction',
 ]);
 $map->get('ticketRegistry', getenv('BASE_URL').'TicketRegistry', [
     'controller' => 'App\Controllers\TicketRegistryController',

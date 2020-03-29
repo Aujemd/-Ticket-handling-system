@@ -1,3 +1,39 @@
-.naranja{
-    color: orange;
+.fondo-oscuro{
+    background-color: rgb(37,39,53);
+}
+
+.fondo-oscuro-medio{
+    background-color: rgb(42, 49, 66);
+}
+.maxAltura{
+    height: 100vh;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+.input{
+    border: 0;
+    outline: none;
+    border: 1px solid rgb(98, 110, 212);
+    height: 2.5em;
+    padding-left: 1em;
+}
+
+.morado-claro{
+    background-color: rgb(98, 110, 212);
+}
+
+.morado-text{
+    color: rgb(98, 110, 212);
+}
+
+.input::placeholder{
+    color: rgb(98, 110, 212);
+}
+
+.input.SignUp{
+    border: 0;
+    border-bottom: 1px solid rgb(98, 110, 212);
 }

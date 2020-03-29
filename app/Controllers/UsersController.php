@@ -7,7 +7,6 @@ use Laminas\Diactoros\Response\RedirectResponse;
 
 class UsersController extends BaseController{
     public function getUsersSignUpAction($request){
-        if($request->getMethod() == 'POST'){
             $postData = $request->getParsedBody();
             try{
                 $postData = $request->getParsedBody();
@@ -26,15 +25,10 @@ class UsersController extends BaseController{
                 return new RedirectResponse(getenv('BASE_URL').'Dashboard/User');
             }catch(\Exception $e){
                 var_dump($e->m);
-            }
-        }
-        return $this->renderHTML('users/signUp.twig', [
-            'url' => getenv('BASE_URL'),
-        ]);
+            } 
     }
 
     public function getUsersLoginAction($request){
-        if($request->getMethod() == 'POST'){
             $postData = $request->getParsedBody();
             $user = User::where('user', $postData['user'])->first();
             if($user){
@@ -49,14 +43,13 @@ class UsersController extends BaseController{
                     return new RedirectResponse(getenv('BASE_URL').'Dashboard/User');
                 }
             }
-        }
-        return $this->renderHTML('users/login.twig',[
+        return $this->renderHTML('index.twig',[
             'url' => getenv('BASE_URL'),
         ]); 
     }
 
     public function getUsersLogoutAction($request){
         unset($_SESSION['userId']);
-        return new RedirectResponse(getenv('BASE_URL').'Login');
+        return new RedirectResponse(getenv('BASE_URL'));
     }
 }
