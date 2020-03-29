@@ -10,6 +10,7 @@ class TicketsController extends BaseController{
     public function getTicketsAction($request){
         $params = $request->getQueryParams();
         $ticket = Ticket::findOrFail($params['id']);
+        $user = User::where('id', $_SESSION['userId'])->first();
 
         if($request->getMethod() == 'POST'){
             $postData = $request->getParsedBody();
@@ -24,6 +25,9 @@ class TicketsController extends BaseController{
                 return $this->renderHTML('tickets/ticketShow.twig', [
                    'url' => getenv('BASE_URL').'Dashboard/Admin',
                    'ticket' => $ticket,
+                   'user' => $user,
+                   'urlInit' => getenv('URL_INIT_ADMIN'),
+
                ]);
             }catch(\Exception $e){
                 var_dump($e->m);
@@ -40,16 +44,19 @@ class TicketsController extends BaseController{
             return $this->renderHTML('tickets/ticketEdit.twig', [
                 'url' => getenv('BASE_URL'),
                 'ticket' => $ticket,
+                'user' => $user,
+                'urlInit' => getenv('URL_INIT_ADMIN'),
             ]);
         }
 
 
-        $user = User::where('id', $_SESSION['userId'])->first();
         if($user){
             if($user->admin == true){
                 return $this->renderHTML('tickets/ticketShow.twig', [
                     'url' => getenv('BASE_URL').'Dashboard/Admin',
                     'ticket' => $ticket,
+                    'user' => $user,
+                    'urlInit' => getenv('URL_INIT_ADMIN'),
                 ]);
             }
             
@@ -57,6 +64,8 @@ class TicketsController extends BaseController{
         return $this->renderHTML('tickets/ticketShow.twig', [
             'url' => getenv('BASE_URL'),
             'ticket' => $ticket,
+            'user' => $user,
+            'urlInit' => getenv('URL_INIT_USER'),
         ]);
     }
 }

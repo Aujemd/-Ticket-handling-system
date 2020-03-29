@@ -29,6 +29,7 @@ class TicketRegistryController extends BaseController{
                     'url' => getenv('BASE_URL').'Dashboard/User',
                     'ticket' => $ticket,
                     'user' => $user,
+                    'urlInit' => getenv('URL_INIT_USER'),
                 ]);
             }catch(\Exception $e){
                 var_dump($e->m);
@@ -36,6 +37,7 @@ class TicketRegistryController extends BaseController{
         }
         return $this->renderHTML('tickets/ticketCreate.twig', [
             'url' => getenv('BASE_URL'),
+            'urlInit' => getenv('URL_INIT_USER'),
         ]);
     }
 }

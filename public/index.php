@@ -72,6 +72,10 @@ $map->get('deleteTicket', getenv('BASE_URL').'Delete/Ticket',[
     'controller' => 'App\Controllers\TicketsController',
     'action' => 'getTicketsAction',
 ]);
+$map->get('createEvent', getenv('BASE_URL').'Event/Create',[
+    'controller' => 'App\Controllers\AdminController',
+    'action' => 'getCreateEventAction',
+]);
 $map->post('saveUsers', getenv('BASE_URL').'SignUp',[
     'controller' => 'App\Controllers\UsersController',
     'action' => 'getUsersSignUpAction',

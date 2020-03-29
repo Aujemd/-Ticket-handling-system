@@ -6,8 +6,23 @@
 			<p class="gris-text mt-5 mb-5">Bienvenid@,
 				{{user.names}}</p>
 			<ul class="nav flex-column w-100">
+				{% if user.admin == true %}
 				<li class="nav-item">
-					<a class="nav-link gris-text" href="{{url}}Logout">Logout</a>
+					<a class="nav-link gris-text" href="{{urlInit}}">Inicio</a>
+				</li>
+				{% endif %}
+				{% if user.admin == false %}
+				<li class="nav-item">
+					<a class="nav-link gris-text" href="{{urlInit}}">Inicio</a>
+				</li>
+				{% endif %}
+				{% if user.admin == true %}
+				<li class="nav-item">
+					<a class="nav-link gris-text" href="{{url}}Event/Create">Registrar Eventos</a>
+				</li>
+				{% endif %}
+				<li class="nav-item">
+					<a class="nav-link gris-text" href="{{url}}Logout">Cerrar Sesión</a>
 				</li>
 			</ul>
 		</div>
