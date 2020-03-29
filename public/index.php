@@ -50,23 +50,27 @@ $map->get('index', getenv('BASE_URL'), [
 ]);
 $map->get('SignUp', getenv('BASE_URL').'SignUp', [
     'controller' => 'App\Controllers\UsersController',
-    'action' => 'getUsersAction',
+    'action' => 'getUsersSignUpAction',
 ]);
-$map->get('dashboard', getenv('BASE_URL').'Dashboard', [
+$map->get('dashboardAdmin', getenv('BASE_URL').'Dashboard/User', [
     'controller' => 'App\Controllers\DashboardController',
-    'action' => 'getDashboardAction',
+    'action' => 'getDashboardUserAction',
+]);
+$map->get('dashboardUser', getenv('BASE_URL').'Dashboard/Admin', [
+    'controller' => 'App\Controllers\DashboardController',
+    'action' => 'getDashboardAdminAction',
 ]);
 $map->get('login', getenv('BASE_URL').'Login', [
-    'controller' => 'App\Controllers\AuthController',
-    'action' => 'getLoginAction',
+    'controller' => 'App\Controllers\UsersController',
+    'action' => 'getUsersLoginAction',
 ]);
 $map->get('ticketRegistry', getenv('BASE_URL').'TicketRegistry', [
     'controller' => 'App\Controllers\TicketRegistryController',
     'action' => 'getTicketRegistryAction',
 ]);
 $map->get('logout', getenv('BASE_URL').'Logout',[
-    'controller' => 'App\Controllers\AuthController',
-    'action' => 'getLogout',
+    'controller' => 'App\Controllers\UsersController',
+    'action' => 'getUsersLogoutAction',
 ]);
 $map->get('showTicket', getenv('BASE_URL').'Show/Ticket',[
     'controller' => 'App\Controllers\TicketsController',
@@ -82,11 +86,11 @@ $map->get('deleteTicket', getenv('BASE_URL').'Delete/Ticket',[
 ]);
 $map->post('saveUsers', getenv('BASE_URL').'SignUp',[
     'controller' => 'App\Controllers\UsersController',
-    'action' => 'getUsersAction',
+    'action' => 'getUsersSignUpAction',
  ]);
  $map->post('auth', getenv('BASE_URL').'Login',[
-    'controller' => 'App\Controllers\AuthController',
-    'action' => 'getLoginAction',
+    'controller' => 'App\Controllers\UsersController',
+    'action' => 'getUsersLoginAction',
 ]);
 $map->post('saveTicket', getenv('BASE_URL').'TicketRegistry',[
     'controller' => 'App\Controllers\TicketRegistryController',

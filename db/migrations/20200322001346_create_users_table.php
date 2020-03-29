@@ -41,6 +41,7 @@ class CreateUsersTable extends AbstractMigration
         ->addColumn('email', 'string')
         ->addColumn('user', 'string')
         ->addColumn('password', 'string')
+        ->addColumn('admin', 'boolean')
         ->addColumn('created_at', 'datetime')
         ->addColumn('updated_at', 'datetime')
         ->addColumn('deleted_at', 'datetime')
