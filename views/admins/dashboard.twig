@@ -1,40 +1,33 @@
-{% extends "layout.twig" %}
+{% extends "users/dashboard.twig" %}
 
-{% block content %}
+{% block mostrar %}
 
-<div class="row flex justify-content-center align-items-center">
-    <div class="col-md-6 d-flex justify-content-center">
-        <h1 class="text-primary">Registros de asistencia</h1>
-    </div>
-    <div class="col-md-6 d-flex justify-content-end">
-        <a class="btn btn-primary" href="{{url}}Logout" role="button">Logout</a>
-    </div>
+<div class="col-md-10 d-flex justify-content-center align-items-center flex-wrap rounded h-100">
+  <table class="table table-bordered gris-text m-1 rounded fondo-oscuro-medio">
+    <thead>
+      <tr>
+        <th scope="col">Nombres</th>
+        <th scope="col">Apellidos</th>
+        <th scope="col">Cédula</th>
+        <th scope="col">Nombre del Evento</th>
+        <th scope="col">Ubicación</th>
+        <th scope="col">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for ticket in tickets %}
+      <tr>
+        <td>{{ticket.user.names}}</td>
+        <td>{{ticket.user.lastnames}}</td>
+        <td>{{ticket.user.vid}}</td>
+        <td>{{ticket.eventName}}</td>
+        <td>{{ticket.ubication}}</td>
+        <td><a class="btn btn-success" href="{{url}}Show/Ticket?id={{ticket.id}}" role="button">Ver</a>
+        <a class="btn btn-primary" href="{{url}}Edit/Ticket?id={{ticket.id}}" role="button">Editar</a>
+        <a class="btn btn-danger" href="{{url}}Delete/Ticket?id={{ticket.id}}" role="button">Eliminar</a></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
 </div>
-
-<table class="table table-bordered">
-  <thead>
-    <tr>
-      <th scope="col">Nombres</th>
-      <th scope="col">Apellidos</th>
-      <th scope="col">Cédula</th>
-      <th scope="col">Nombre del Evento</th>
-      <th scope="col">Ubicación</th>
-      <th scope="col">Acciones</th>
-    </tr>
-  </thead>
-  <tbody>
-    {% for ticket in tickets %}
-    <tr>
-      <td>{{ticket.user.names}}</td>
-      <td>{{ticket.user.lastnames}}</td>
-      <td>{{ticket.user.vid}}</td>
-      <td>{{ticket.eventName}}</td>
-      <td>{{ticket.ubication}}</td>
-      <td><a class="btn btn-success" href="{{url}}Show/Ticket?id={{ticket.id}}" role="button">Ver</a>
-      <a class="btn btn-primary" href="{{url}}Edit/Ticket?id={{ticket.id}}" role="button">Editar</a>
-      <a class="btn btn-danger" href="{{url}}Delete/Ticket?id={{ticket.id}}" role="button">Eliminar</a></td>
-    </tr>
-    {% endfor %}
-  </tbody>
-</table>
 {% endblock %}

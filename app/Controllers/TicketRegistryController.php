@@ -24,9 +24,11 @@ class TicketRegistryController extends BaseController{
                 $ticket->ubication = $postData['ubication'];
                 $ticket->user_id = $_SESSION['userId'];
                 $ticket->save();
+                $user = User::where('id', $_SESSION['userId'])->first();
                 return $this->renderHTML('tickets/ticketShow.twig', [
-                    'url' => getenv('BASE_URL'),
+                    'url' => getenv('BASE_URL').'Dashboard/User',
                     'ticket' => $ticket,
+                    'user' => $user,
                 ]);
             }catch(\Exception $e){
                 var_dump($e->m);

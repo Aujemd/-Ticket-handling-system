@@ -1,31 +1,19 @@
-{% extends "layout.twig" %}
-{% block content %}
-<div class="container text-center">
-		<h1 class="text-primary">Editar Boleto</h1>
+{% extends "users/dashboard.twig" %}
+{% block mostrar %}
+	<div class="col-md-4 rounded h-75 fondo-oscuro-medio d-flex justify-content-center align-items-center flex-wrap">
 		<form action="{{url}}Update/Ticket?id={{ticket.id}}" method="post">
-			<div class="form-row">
-				<div class="col m-3">
-					<input name="serial" type="text" class="form-control" value="{{ticket.serial}}">
-				</div>
-				<div class="col m-3">
-					<input name="eventName" type="text" class="form-control" value="{{ticket.eventName}}">
-				</div>
-			</div>
-			<div class="form-row">
-				<div class="col m-3">
-					<input name="date" type="text" class="form-control" value="{{ticket.date}}">
-				</div>
-				<div class="col m-3">
-					<select class="custom-select" name="ubication">
-						<option selected value="{{ticket.ubication}}">{{ticket.ubication}}</option>
-						<option value="Altos">Altos</option>
-						<option value="Medios">Medios</option>
-                        <option value="VIP">VIP</option>
-                        <option value="Platino">Platino</option>
-					</select>
-				</div>
-			</div>
-			<button type="submit" class="btn btn-primary">Registrar</button>
+			<p class="text-white mb-4">Editar Boleto</p>
+			<input name="serial" type="text" class="fondo-oscuro-medio input w-100 rounded text-white mb-4" value="{{ticket.serial}}">
+			<input name="eventName" type="text" class="fondo-oscuro-medio input w-100 rounded text-white mb-4" value="{{ticket.eventName}}">
+			<input name="date" type="text" class="fondo-oscuro-medio input w-100 rounded text-white mb-4" value="{{ticket.date}}">
+			<select class="fondo-oscuro-medio input rounded w-100 morado-text mb-4" name="ubication">
+				<option selected value="{{ticket.ubication}}">{{ticket.ubication}}</option>
+				<option value="Altos">Altos</option>
+				<option value="Medios">Medios</option>
+				<option value="VIP">VIP</option>
+				<option value="Platino">Platino</option>
+			</select>
+			<button type="submit" class="morado-claro input w-100 rounded text-white">Registrar</button>
 		</form>
 	</div>
 {% endblock %}

@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-use App\Models\{Ticket};
+use App\Models\{Ticket, User};
 use Laminas\Diactoros\Response\RedirectResponse;
 
 class TicketsController extends BaseController{
@@ -20,10 +20,9 @@ class TicketsController extends BaseController{
                 $ticket->eventName = $postData['eventName'];
                 $ticket->date = $postData['date'];
                 $ticket->ubication = $postData['ubication'];
-                $ticket->user_id = $_SESSION['userId'];
                 $ticket->save();
                 return $this->renderHTML('tickets/ticketShow.twig', [
-                   'url' => getenv('BASE_URL'),
+                   'url' => getenv('BASE_URL').'Dashboard/Admin',
                    'ticket' => $ticket,
                ]);
             }catch(\Exception $e){
@@ -34,7 +33,7 @@ class TicketsController extends BaseController{
         
         if($request->getUri()->getPath() == getenv('BASE_URL').'Delete/Ticket'){
             $ticket->delete();
-            return new RedirectResponse(getenv('BASE_URL').'Dashboard');
+            return new RedirectResponse(getenv('BASE_URL').'Dashboard/Admin');
         }
 
         if($request->getUri()->getPath() == getenv('BASE_URL').'Edit/Ticket'){
@@ -44,6 +43,17 @@ class TicketsController extends BaseController{
             ]);
         }
 
+
+        $user = User::where('id', $_SESSION['userId'])->first();
+        if($user){
+            if($user->admin == true){
+                return $this->renderHTML('tickets/ticketShow.twig', [
+                    'url' => getenv('BASE_URL').'Dashboard/Admin',
+                    'ticket' => $ticket,
+                ]);
+            }
+            
+        }
         return $this->renderHTML('tickets/ticketShow.twig', [
             'url' => getenv('BASE_URL'),
             'ticket' => $ticket,

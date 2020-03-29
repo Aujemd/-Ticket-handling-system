@@ -3,11 +3,12 @@
 {% block mostrar %}
 	<div class="col-md-6 rounded h-75 morado-claro d-flex justify-content-center align-items-center flex-wrap">
 		<div class="d-flex justify-content-center align-items-center flex-wrap text-center">
-			<h3 class="text-white w-100">{{ticket.eventName}}</h3>
-			<h3 class="text-white w-100">{{ticket.serial}}</h3>
-			<h3 class="morado-mas-claro-text w-100">{{ticket.ubication}}</h3>
-			<h3 class="morado-mas-claro-text w-100 mb-5">{{ticket.date}}</h3>
-			<a class="morado-mas-claro-text" href="{{url}}Dashboard/User" role="button">Ir al Dashboard</a>
+			<h2 class="text-white w-100">Propietario: {{ticket.user.names}}</h2>
+			<h3 class="text-white w-100">Evento: {{ticket.eventName}}</h3>
+			<h3 class="text-white w-100">Serial: {{ticket.serial}}</h3>
+			<h3 class="morado-mas-claro-text w-100">Ubicación: {{ticket.ubication}}</h3>
+			<h3 class="morado-mas-claro-text w-100 mb-5">Fecha: {{ticket.date}}</h3>
+			<a class="morado-mas-claro-text" href="{{url}}" role="button">Ir al Dashboard</a>
 		</div>
 	</div>
 {% endblock %}
