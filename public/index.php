@@ -76,6 +76,10 @@ $map->get('createEvent', getenv('BASE_URL').'Event/Create',[
     'controller' => 'App\Controllers\AdminController',
     'action' => 'getCreateEventAction',
 ]);
+$map->post('saveEvent', getenv('BASE_URL').'Event/Create',[
+    'controller' => 'App\Controllers\AdminController',
+    'action' => 'getSaveEventAction',
+]);
 $map->post('saveUsers', getenv('BASE_URL').'SignUp',[
     'controller' => 'App\Controllers\UsersController',
     'action' => 'getUsersSignUpAction',
