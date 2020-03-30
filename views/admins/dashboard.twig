@@ -1,33 +1,31 @@
 {% extends "users/dashboard.twig" %}
 
 {% block mostrar %}
-
-<div >
-  <table >
+  <table class="table-container rounded fondo-oscuro-medio">
     <thead>
       <tr>
-        <th scope="col">Nombres</th>
-        <th scope="col">Apellidos</th>
-        <th scope="col">Cédula</th>
-        <th scope="col">Nombre del Evento</th>
-        <th scope="col">Ubicación</th>
-        <th scope="col">Acciones</th>
+        <th scope="col" class="gris-text celda">Nombres</th>
+        <th scope="col" class="gris-text celda">Apellidos</th>
+        <th scope="col" class="gris-text celda">Cédula</th>
+        <th scope="col" class="gris-text celda">Nombre del Evento</th>
+        <th scope="col" class="gris-text celda">Ubicación</th>
+        <th scope="col" class="gris-text celda">Acciones</th>
       </tr>
     </thead>
     <tbody>
       {% for ticket in tickets %}
       <tr>
-        <td>{{ticket.user.names}}</td>
-        <td>{{ticket.user.lastnames}}</td>
-        <td>{{ticket.user.vid}}</td>
-        <td>{{ticket.eventName}}</td>
-        <td>{{ticket.ubication}}</td>
-        <td><a  href="{{url}}Show/Ticket?id={{ticket.id}}" role="button">Ver</a>
-        <a  href="{{url}}Edit/Ticket?id={{ticket.id}}" role="button">Editar</a>
-        <a  href="{{url}}Delete/Ticket?id={{ticket.id}}" role="button">Eliminar</a></td>
+        <td class="gris-text celda">{{ticket.user.names}}</td>
+        <td class="gris-text celda">{{ticket.user.lastnames}}</td>
+        <td class="gris-text celda">{{ticket.user.vid}}</td>
+        <td class="gris-text celda">{{ticket.eventName}}</td>
+        <td class="gris-text celda">{{ticket.ubication}}</td>
+        <td class="gris-text celda">
+        <a  href="{{url}}Show/Ticket?id={{ticket.id}}" role="button" class="table-btn-ver text-white rounded btn button">Ver</a>
+        <a  href="{{url}}Edit/Ticket?id={{ticket.id}}" role="button" class="table-btn-editar text-white rounded btn button">Editar</a>
+        <a  href="{{url}}Delete/Ticket?id={{ticket.id}}" role="button" class="table-btn-eliminar text-white rounded btn button">Eliminar</a></td>
       </tr>
       {% endfor %}
     </tbody>
   </table>
-</div>
 {% endblock %}

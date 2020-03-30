@@ -232,3 +232,32 @@
     text-decoration: none;
     text-align: center;
 }
+
+/*Estilos del dashboard de los admins*/
+
+.celda{
+    padding: 1%;
+}
+
+.table-container{
+    width: 95%;
+    padding: 1%;
+    text-align: center;
+}
+
+.btn{
+    text-decoration: none;
+    margin-left: 4%;
+}
+
+.table-btn-ver{
+    background-color: rgb(2, 164, 153);
+}
+
+.table-btn-editar{
+    background: rgb(56,164,248);
+}
+
+.table-btn-eliminar{
+    background: rgb(236,69,97);
+}
