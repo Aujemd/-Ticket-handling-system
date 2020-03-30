@@ -51,7 +51,6 @@ class UsersController extends BaseController{
             }else{
                 return new RedirectResponse(getenv('BASE_URL'));
             }
-
     }
 
     public function getUsersLogoutAction($request){

@@ -1,0 +1,137 @@
+[33mcommit fdc3716f5cf0e46b62d4398dbeea4fe708a28d70[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: Johan Mora <joenmodu99@gmail.com>
+Date:   Mon Mar 30 01:46:06 2020 -0400
+
+    Fix bug login x3
+
+[33mcommit 785e600c26e262267b5e3fa05e029726bc8886ad[m
+Author: Johan Mora <joenmodu99@gmail.com>
+Date:   Mon Mar 30 01:44:18 2020 -0400
+
+    Fix bug de login x2
+
+[33mcommit 05ca2403f60959cb55541dde5a4dda3aec9f3ab2[m
+Author: Johan Mora <joenmodu99@gmail.com>
+Date:   Mon Mar 30 01:40:24 2020 -0400
+
+    Fix Bug del Login
+
+[33mcommit b41e8357db0904a91220575cfd8cafae0407701c[m
+Author: Johan Mora <joenmodu99@gmail.com>
+Date:   Mon Mar 30 01:28:16 2020 -0400
+
+    Mostrando los env
+
+[33mcommit 6bcff99b61e0febde424eb5d46d747e87e8bfe5b[m
+Author: Johan Mora <joenmodu99@gmail.com>
+Date:   Mon Mar 30 01:26:43 2020 -0400
+
+    Aplicando debug
+
+[33mcommit 3823705a2cafef59a328ed9e5c4101f160fd6c78[m
+Author: Johan Mora <joenmodu99@gmail.com>
+Date:   Mon Mar 30 01:21:46 2020 -0400
+
+    Fix env
+
+[33mcommit 4e9ff74db00157ebfbc6411b41a8cb309532ecbe[m
+Author: Johan Mora <joenmodu99@gmail.com>
+Date:   Mon Mar 30 00:55:27 2020 -0400
+
+    Arreglando driver de db
+
+[33mcommit 47f45a27991ca422c5c78d862c05f446642ccb72[m[33m ([m[1;31morigin/master[m[33m)[m
+Author: Johan Mora <joenmodu99@gmail.com>
+Date:   Sun Mar 29 23:11:00 2020 -0400
+
+    Flujo de comprar de boletos completo
+
+[33mcommit 950c834cd1f0f3d927be23dd655926164b3bba24[m
+Author: Johan Mora <joenmodu99@gmail.com>
+Date:   Sun Mar 29 19:14:00 2020 -0400
+
+    Vista de mostrar evento creada
+
+[33mcommit 38450a296dd7c17df9bb41a98b3d09a0994045fa[m
+Author: Johan Mora <joenmodu99@gmail.com>
+Date:   Sun Mar 29 18:50:34 2020 -0400
+
+    Creado de eventos implementado
+
+[33mcommit 5ee3e776246106da8ac9d56c03de1b871c9d52a4[m
+Author: Johan Mora <joenmodu99@gmail.com>
+Date:   Sun Mar 29 17:30:24 2020 -0400
+
+    Agregan router al inicio de cada panel
+
+[33mcommit 037ddc533ca580f09426beb08961d53a3fc35daa[m
+Author: Johan Mora <joenmodu99@gmail.com>
+Date:   Sun Mar 29 16:28:51 2020 -0400
+
+    Flujo de administrador estilizado
+
+[33mcommit 2e4171f2d86ed4c05c024e2551af8037a176a657[m
+Author: Johan Mora <joenmodu99@gmail.com>
+Date:   Sun Mar 29 13:25:27 2020 -0400
+
+    Flujo de usuario estilizado
+
+[33mcommit db11fcda5e7d2f4b3f8945805e74f04ae1458aa0[m
+Author: Johan Mora <joenmodu99@gmail.com>
+Date:   Sat Mar 28 23:46:31 2020 -0400
+
+    Página index estilada
+
+[33mcommit f2db2c26be91dcc48749763463c222a345bad220[m
+Author: Johan Mora <joenmodu99@gmail.com>
+Date:   Sat Mar 28 21:06:40 2020 -0400
+
+    Flujo de usuario y admin separado
+
+[33mcommit 97e841408adf3e1a3c6e7d34788dcca321ac86fe[m
+Author: Johan Mora <joenmodu99@gmail.com>
+Date:   Thu Mar 26 23:29:29 2020 -0400
+
+    Acciones crud implementadas
+
+[33mcommit 6984462907490dd4bbba5da45b656381ea1987eb[m
+Author: Johan Mora <joenmodu99@gmail.com>
+Date:   Thu Mar 26 22:28:07 2020 -0400
+
+    Registro de Tickets con factura hecho
+
+[33mcommit e5606bc3d60ab16885fb64123769ba2c360a8988[m
+Author: Johan Mora <joenmodu99@gmail.com>
+Date:   Thu Mar 26 20:42:30 2020 -0400
+
+    Dashboard con listado de tickets hecho
+
+[33mcommit 7d351a4bb3aa6b8b2b7f23b68f3e6778e5d653d2[m
+Author: Johan Mora <joenmodu99@gmail.com>
+Date:   Tue Mar 24 23:46:12 2020 -0400
+
+    Flujo de registro de tickets hecho
+
+[33mcommit affc9d3eb72fb98e197958dd72d86290e433aa61[m
+Author: Johan Mora <joenmodu99@gmail.com>
+Date:   Mon Mar 23 22:21:28 2020 -0400
+
+    Login Implementado
+
+[33mcommit 250d658334c4a2b08fc07d61696fc2300f0dd42a[m
+Author: Johan Mora <joenmodu99@gmail.com>
+Date:   Sun Mar 22 22:45:06 2020 -0400
+
+    Flujo primario de Sign Up Hecho
+
+[33mcommit 8efcdd3714c91c501b9ae0b93b09549ce215e549[m
+Author: Johan Mora <joenmodu99@gmail.com>
+Date:   Sat Mar 21 22:31:43 2020 -0400
+
+    Registro de usuarios realizado
+
+[33mcommit 10dab94237c724375875a857543ccc8557f6d868[m
+Author: Johan Mora <joenmodu99@gmail.com>
+Date:   Thu Mar 19 22:01:10 2020 -0400
+
+    Commit Inicial
