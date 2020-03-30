@@ -53,7 +53,7 @@ class TicketsController extends BaseController{
         if($user){
             if($user->admin == true){
                 return $this->renderHTML('tickets/ticketShow.twig', [
-                    'url' => getenv('BASE_URL').'Dashboard/Admin/',
+                    'url' => getenv('BASE_URL'),
                     'ticket' => $ticket,
                     'user' => $user,
                     'urlInit' => getenv('URL_INIT_ADMIN'),
