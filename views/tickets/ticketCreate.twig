@@ -1,19 +1,21 @@
 {% extends "users/dashboard.twig" %}
 {% block mostrar %}
-	<div >
-		<form action="{{url}}TicketRegistry" method="post" >
-			<p >Registrar Boleto</p>
-			<input name="serial" type="text" readonly="readonly" value={{serial}}>
-			<input name="eventName" type="text" readonly="readonly" value="{{event.eventName}}">
-			<input name="date" type="text" readonly="readonly" value={{event.date}}>
-			<select  name="ubication">
-				<option selected disabled required >Elige la ubicación</option>
-				<option value="Altos">Altos</option>
-				<option value="Medios">Medios</option>
-				<option value="VIP">VIP</option>
-				<option value="Platino">Platino</option>
-			</select>		
-			<button type="submit" >Registrar</button>
+	<div class=" fondo-oscuro-medio flex wrap ticketCreate-Container rounded">
+		<form action="{{url}}TicketRegistry" method="post" class="flex wrap">
+			<p class="text-white w-100">Registrar Boleto</p>
+			<input name="serial" type="text" readonly="readonly" value={{serial}} class="input login fondo-oscuro-medio rounded morado-text">
+			<input name="eventName" type="text" readonly="readonly" value="{{event.eventName}}" class="input login fondo-oscuro-medio rounded morado-text">
+			<input name="date" type="text" readonly="readonly" value={{event.date}} class="input login fondo-oscuro-medio rounded morado-text">
+			<div class="flex ticketCreate-select-container">
+				<select name="ubication" class="fondo-oscuro-medio rounded input morado-text ticketCreate-select">
+					<option selected disabled required>Elige la ubicación</option>
+					<option value="Altos">Altos</option>
+					<option value="Medios">Medios</option>
+					<option value="VIP">VIP</option>
+					<option value="Platino">Platino</option>
+				</select>
+				<button type="submit" class="morado-claro text-white rounded ticketCreate-button button">Registrar</button>
+			</div>
 		</form>
 	</div>
 {% endblock %}

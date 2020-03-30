@@ -1,16 +1,16 @@
 {% extends "users/dashboard.twig" %}
 
 {% block mostrar %}
-	<div >
-		<form action="{{url}}Event/Choose" method="post" >
-            <h1 >Escoge el evento al que quieres registrar el boleto</h1>
-			<select  name="eventId">
+	<div class="fondo-oscuro-medio rounded chooseEvent-container">
+		<form action="{{url}}Event/Choose" method="post"  class="flex wrap chooseEvent-form">
+            <h4 class="text-white chooseEvent-title">Escoge el evento al que quieres registrar el boleto</h4>
+			<select  name="eventId" class="chooseEvent-select morado-claro input text-white rounded">
 				<option selected value="">Nombre del evento ....</option>
 				{% for event in events %}
 					<option value={{event.id}}>{{event.eventName}}</option>
 				{% endfor %}
 			</select>
-			<button type="submit" >Elegir</button>
+			<button type="submit" class="chooseEvent-button button morado-claro text-white rounded">Elegir</button>
 		</form>
 	</div>
 {% endblock %}

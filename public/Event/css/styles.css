@@ -64,6 +64,10 @@
     color: rgb(177, 178, 228);
 }
 
+.morado-mas-claro-bg{
+    background: rgb(177, 178, 228);
+}
+
 .input{
     border: 0;
     outline: none;
@@ -171,4 +175,47 @@
 .dashboard-nav-ul{
     list-style: none;
     margin-top: 5%;
+}
+
+/*Estilos de la view chooseEvent */
+
+.chooseEvent-container{
+    padding: 5%;
+    width: 50%;
+}
+
+.chooseEvent-select{
+    margin: 2%;
+}
+.chooseEvent-title{
+    margin: 5%;
+}
+
+.chooseEvent-button{
+    padding: 1.9%;
+    width: 35%;
+}
+
+/*Estilos del la view create Ticket */
+
+.ticketCreate-button{
+    padding: 1.7%;
+    width: 30%;
+    margin-top: 5%;
+    margin-left: 5%;
+}
+
+.ticketCreate-select-container{
+    width: 80%;
+}
+
+.input.ticketCreate-select{
+    width: 80%;
+    margin-top: 5%;
+}
+
+.ticketCreate-Container{
+    text-align: center;
+    width: 40%;
+    height: 45%;
 }
