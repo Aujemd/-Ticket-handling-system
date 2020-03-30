@@ -12,6 +12,7 @@ class AdminController extends BaseController{
         return $this->renderHTML('admins/eventCreate.twig', [
             'url' => getenv('BASE_URL'),
             'user' => $user,
+            'urlInit' => getenv('URL_INIT_ADMIN'),
         ]);
     }
 
