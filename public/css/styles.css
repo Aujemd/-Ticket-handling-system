@@ -1,3 +1,10 @@
+*{
+    box-sizing: border-box;
+    font-family: system-ui;
+    margin: 0;
+    padding: 0;
+}
+
 .fondo-oscuro{
     background-color: rgb(37,39,53);
 }
@@ -9,10 +16,7 @@
     height: 100vh;
 }
 
-*{
-    box-sizing: border-box;
-    font-family: system-ui;
-}
+
 
 .input{
     border: 0;

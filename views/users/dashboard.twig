@@ -1,34 +1,34 @@
 {% extends "layout.twig" %}
 
 {% block content %}
-	<div class="row maxAltura m-0">
-		<div class="col-md-2 w-100 h-100 m-0 fondo-oscuro-medio">
-			<p class="text-white small-size">USUARIO</p>
-			<p class="gris-text mb-5">{{user.names}}</p>
-			<ul class="nav flex-column w-100">
-			<p class="text-white small-size">MENU</p>
+	<div >
+		<div >
+			<p >USUARIO</p>
+			<p >{{user.names}}</p>
+			<ul >
+			<p >MENU</p>
 				{% if user.admin == true %}
-				<li class="nav-item">
-					<a class="nav-link gris-text" href="{{urlInit}}">Inicio</a>
+				<li >
+					<a href="{{urlInit}}">Inicio</a>
 				</li>
 				{% endif %}
 				{% if user.admin == false %}
-				<li class="nav-item">
-					<a class="nav-link gris-text" href="{{urlInit}}">Inicio</a>
+				<li >
+					<a  href="{{urlInit}}">Inicio</a>
 				</li>
 				{% endif %}
 				{% if user.admin == true %}
-				<li class="nav-item">
-					<a class="nav-link gris-text" href="{{url}}Event/Create">Registrar Eventos</a>
+				<li >
+					<a  href="{{url}}Event/Create">Registrar Eventos</a>
 				</li>
 				{% endif %}
-				<li class="nav-item">
-					<a class="nav-link gris-text" href="{{url}}Logout">Cerrar Sesión</a>
+				<li >
+					<a  href="{{url}}Logout">Cerrar Sesión</a>
 				</li>
 			</ul>
 		</div>
-		<div class="fondo-oscuro col-md-10 w-100 h-100 m-0">
-			<div class="row h-100 d-flex justify-content-center align-items-center">
+		<div >
+			<div >
           {% block mostrar %}{% endblock %}
 			</div>
 		</div>

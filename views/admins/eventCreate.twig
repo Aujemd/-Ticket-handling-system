@@ -1,16 +1,16 @@
 {% extends "users/dashboard.twig" %}
 
 {% block mostrar %}
-	<div class="col-md-4 rounded h-75 fondo-oscuro-medio d-flex justify-content-center align-items-center flex-wrap">
-		<form action="{{url}}Event/Create" method="post" class="d-flex justify-content-center align-items-center flex-wrap">
-			<p class="text-white mb-4">Registrar Evento</p>
-			<input name="eventName" type="text" class="fondo-oscuro-medio input w-100 rounded text-white mb-4" placeholder="Nombre del evento">
-			<input name="altos" type="number" class="fondo-oscuro-medio input w-100 rounded text-white mb-4" placeholder="Cantidad Disponible en Altos">
-			<input name="medios" type="number" class="fondo-oscuro-medio input w-100 rounded text-white mb-4" placeholder="Cantidad Disponible en Medios">
-			<input name="vip" type="number" class="fondo-oscuro-medio input w-100 rounded text-white mb-4" placeholder="Cantidad Disponible en VIP">
-			<input name="platino" type="number" class="fondo-oscuro-medio input w-100 rounded text-white mb-4" placeholder="Cantidad Disponible en Platino">
-			<input name="date" type="text" class="fondo-oscuro-medio input w-100 rounded text-white mb-4" placeholder="Fecha DD/MM/AA">
-			<button type="submit" class="morado-claro input w-100 rounded text-white">Registrar</button>
+	<div >
+		<form action="{{url}}Event/Create" method="post" >
+			<p >Registrar Evento</p>
+			<input name="eventName" type="text"  placeholder="Nombre del evento">
+			<input name="altos" type="number"  placeholder="Cantidad Disponible en Altos">
+			<input name="medios" type="number"  placeholder="Cantidad Disponible en Medios">
+			<input name="vip" type="number"  placeholder="Cantidad Disponible en VIP">
+			<input name="platino" type="number"  placeholder="Cantidad Disponible en Platino">
+			<input name="date" type="text"  placeholder="Fecha DD/MM/AA">
+			<button type="submit" >Registrar</button>
 		</form>
 	</div>
 {% endblock %}

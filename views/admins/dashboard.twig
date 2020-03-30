@@ -2,8 +2,8 @@
 
 {% block mostrar %}
 
-<div class="col-md-10 d-flex justify-content-center align-items-center flex-wrap rounded h-100">
-  <table class="table table-bordered gris-text m-1 rounded fondo-oscuro-medio shadow-lg">
+<div >
+  <table >
     <thead>
       <tr>
         <th scope="col">Nombres</th>
@@ -22,9 +22,9 @@
         <td>{{ticket.user.vid}}</td>
         <td>{{ticket.eventName}}</td>
         <td>{{ticket.ubication}}</td>
-        <td><a class="btn btn-success" href="{{url}}Show/Ticket?id={{ticket.id}}" role="button">Ver</a>
-        <a class="btn btn-primary" href="{{url}}Edit/Ticket?id={{ticket.id}}" role="button">Editar</a>
-        <a class="btn btn-danger" href="{{url}}Delete/Ticket?id={{ticket.id}}" role="button">Eliminar</a></td>
+        <td><a  href="{{url}}Show/Ticket?id={{ticket.id}}" role="button">Ver</a>
+        <a  href="{{url}}Edit/Ticket?id={{ticket.id}}" role="button">Editar</a>
+        <a  href="{{url}}Delete/Ticket?id={{ticket.id}}" role="button">Eliminar</a></td>
       </tr>
       {% endfor %}
     </tbody>

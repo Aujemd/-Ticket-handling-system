@@ -1,16 +1,16 @@
 {% extends "users/dashboard.twig" %}
 
 {% block mostrar %}
-	<div class="col-md-10 h-100 d-flex justify-content-center align-items-center flex-wrap">
-		<form action="{{url}}Event/Choose" method="post" class="d-flex justify-content-center align-items-center flex-wrap w-100">
-            <h1 class="gris-text mb-4">Escoge el evento al que quieres registrar el boleto</h1>
-			<select class="morado-claro input w-100 text-white mb-4" name="eventId">
+	<div >
+		<form action="{{url}}Event/Choose" method="post" >
+            <h1 >Escoge el evento al que quieres registrar el boleto</h1>
+			<select  name="eventId">
 				<option selected value="">Nombre del evento ....</option>
 				{% for event in events %}
 					<option value={{event.id}}>{{event.eventName}}</option>
 				{% endfor %}
 			</select>
-			<button type="submit" class="morado-claro input rounded text-white w-25">Elegir</button>
+			<button type="submit" >Elegir</button>
 		</form>
 	</div>
 {% endblock %}
