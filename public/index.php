@@ -5,7 +5,7 @@ require_once '../vendor/autoload.php';
 use Illuminate\Database\Capsule\Manager as Capsule;
 use Aura\Router\RouterContainer;
 
-session_start();//Inicializa la sesión
+session_start();
 
 if(file_exists("../.env")){
     $dotenv = Dotenv\Dotenv::createMutable(__DIR__ . '/..');
@@ -46,61 +46,94 @@ $request = Laminas\Diactoros\ServerRequestFactory::fromGlobals(
 
 $map = $routerContainer->getMap();
 
+// Rutas de la vista index
+
+// GET
+
 $map->get('index', getenv('BASE_URL'), [
     'controller' => 'App\Controllers\IndexController',
     'action' => 'indexAction',
 ]);
-$map->get('dashboardAdmin', getenv('BASE_URL').'Dashboard/User', [
-    'controller' => 'App\Controllers\DashboardController',
-    'action' => 'getDashboardUserAction',
-]);
-$map->get('dashboardUser', getenv('BASE_URL').'Dashboard/Admin', [
-    'controller' => 'App\Controllers\DashboardController',
-    'action' => 'getDashboardAdminAction',
-]);
-$map->get('logout', getenv('BASE_URL').'Logout',[
-    'controller' => 'App\Controllers\UsersController',
-    'action' => 'getUsersLogoutAction',
-]);
-$map->get('showTicket', getenv('BASE_URL').'Show/Ticket',[
-    'controller' => 'App\Controllers\TicketsController',
-    'action' => 'getTicketsAction',
-]);
-$map->get('editTicket', getenv('BASE_URL').'Edit/Ticket',[
-    'controller' => 'App\Controllers\TicketsController',
-    'action' => 'getTicketsAction',
-]);
-$map->get('deleteTicket', getenv('BASE_URL').'Delete/Ticket',[
-    'controller' => 'App\Controllers\TicketsController',
-    'action' => 'getTicketsAction',
-]);
-$map->get('createEvent', getenv('BASE_URL').'Event/Create',[
-    'controller' => 'App\Controllers\AdminController',
-    'action' => 'getCreateEventAction',
-]);
-$map->post('saveEvent', getenv('BASE_URL').'Event/Create',[
-    'controller' => 'App\Controllers\AdminController',
-    'action' => 'getSaveEventAction',
-]);
-$map->post('saveUsers', getenv('BASE_URL').'SignUp',[
-    'controller' => 'App\Controllers\UsersController',
-    'action' => 'getUsersSignUpAction',
- ]);
- $map->post('auth', getenv('BASE_URL').'Login',[
+
+// POST
+
+$map->post('login', getenv('BASE_URL').'Login',[
     'controller' => 'App\Controllers\UsersController',
     'action' => 'getUsersLoginAction',
 ]);
+
+$map->post('signUp', getenv('BASE_URL').'SignUp',[
+    'controller' => 'App\Controllers\UsersController',
+    'action' => 'getUsersSignUpAction',
+ ]);
+
+ // Rutas de la vista dashboard de usuario normal
+
+//GET
+
+ $map->get('dashboardUser', getenv('BASE_URL').'Dashboard/User', [
+    'controller' => 'App\Controllers\DashboardController',
+    'action' => 'getDashboardUserAction',
+]);
+
+//POST
+
+$map->post('chooseEvent', getenv('BASE_URL').'Event/Choose',[
+    'controller' => 'App\Controllers\DashboardController',
+    'action' => 'getDashboardUserAction',
+]);
+
 $map->post('saveTicket', getenv('BASE_URL').'TicketRegistry',[
     'controller' => 'App\Controllers\TicketRegistryController',
     'action' => 'getTicketRegistryAction',
 ]);
+
+//Rutas de la vista dashboard de usuario admin
+
+//GET
+
+$map->get('dashboardAdmin', getenv('BASE_URL').'Dashboard/Admin', [
+    'controller' => 'App\Controllers\DashboardController',
+    'action' => 'getDashboardAdminAction',
+]);
+
+$map->get('createEvent', getenv('BASE_URL').'Event/Create',[
+    'controller' => 'App\Controllers\AdminController',
+    'action' => 'getCreateEventAction',
+]);
+
+$map->get('showTicket', getenv('BASE_URL').'Show/Ticket',[
+    'controller' => 'App\Controllers\TicketsController',
+    'action' => 'getTicketsAction',
+]);
+
+$map->get('editTicket', getenv('BASE_URL').'Edit/Ticket',[
+    'controller' => 'App\Controllers\TicketsController',
+    'action' => 'getTicketsAction',
+]);
+
+$map->get('deleteTicket', getenv('BASE_URL').'Delete/Ticket',[
+    'controller' => 'App\Controllers\TicketsController',
+    'action' => 'getTicketsAction',
+]);
+
+//POST
+
+$map->post('saveEvent', getenv('BASE_URL').'Event/Create',[
+    'controller' => 'App\Controllers\AdminController',
+    'action' => 'getSaveEventAction',
+]);
+
 $map->post('updateTicket', getenv('BASE_URL').'Update/Ticket',[
     'controller' => 'App\Controllers\TicketsController',
     'action' => 'getTicketsAction',
 ]);
-$map->post('chooseEvent', getenv('BASE_URL').'Event/Choose',[
-    'controller' => 'App\Controllers\DashboardController',
-    'action' => 'getDashboardUserAction',
+
+//Ruta Logout Universal
+
+$map->get('logout', getenv('BASE_URL').'Logout',[
+    'controller' => 'App\Controllers\UsersController',
+    'action' => 'getUsersLogoutAction',
 ]);
 
 $matcher = $routerContainer->getMatcher();
@@ -118,7 +151,7 @@ if(!$route){
     $controller = new $controllerName;
     $response = $controller->$actionName($request);
 
-    foreach($response->getHeaders() as $name => $values){//Mojon para que no se puteen las url al redireccionar las paginas
+    foreach($response->getHeaders() as $name => $values){
         foreach($values as $value){
             header(sprintf('%s: %s', $name, $value), false);
         }

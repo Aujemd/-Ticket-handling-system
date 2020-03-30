@@ -1,3 +1,5 @@
+/* Estilos Generales */
+
 *{
     box-sizing: border-box;
     font-family: system-ui;
@@ -38,6 +40,53 @@
     background-color: rgb(42, 49, 66);
 }
 
+.text-white{
+    color: whitesmoke;
+}
+
+.rounded{
+    border-radius: 2px;
+}
+
+.morado-claro{
+    background-color: rgb(98, 110, 212);
+}
+
+.morado-text{
+    color: rgb(98, 110, 212);
+}
+
+.gris-text{
+    color: rgb(134, 154, 173);
+}
+
+.morado-mas-claro-text{
+    color: rgb(177, 178, 228);
+}
+
+.input{
+    border: 0;
+    outline: none;
+    border: 1px solid rgb(98, 110, 212);
+    height: 2.5em;
+    padding-left: 1em;
+}
+
+.button{
+    border: 0;
+    padding: 3%;
+}
+
+.input::placeholder{
+    color: rgb(98, 110, 212);
+}
+
+.small-size{
+    font-size: .8em;
+}
+
+/*Estilos del la view Index*/
+
 .login-container{
     width: 30%;
     height: 80%;
@@ -54,53 +103,14 @@
     flex-direction: column;
 }
 
-.input{
-    border: 0;
-    outline: none;
-    border: 1px solid rgb(98, 110, 212);
-    height: 2.5em;
-    padding-left: 1em;
-}
-
 .input.login{
     margin-top: 5%;
     width: 80%;
 }
 
-.button{
-    border: 0;
-    padding: 3%;
-}
-
 .button.login{
     width: 80%;
     margin-top: 5%;
-}
-
-.button-signup{
-    width: 45%;
-    margin-left: 2%;
-    padding: 1%;
-    border: 0;
-}
-
-.text-white{
-    color: whitesmoke;
-}
-.rounded{
-    border-radius: 2px;
-}
-
-.morado-claro{
-    background-color: rgb(98, 110, 212);
-}
-
-.morado-text{
-    color: rgb(98, 110, 212);
-}
-
-.input::placeholder{
-    color: rgb(98, 110, 212);
 }
 
 .input-signup-container{
@@ -113,17 +123,14 @@
     margin-left: 2%;
 }
 
-.gris-text{
-    color: rgb(134, 154, 173);
+.button-signup{
+    width: 45%;
+    margin-left: 2%;
+    padding: 1%;
+    border: 0;
 }
 
-.morado-mas-claro-text{
-    color: rgb(177, 178, 228);
-}
-
-.small-size{
-    font-size: .8em;
-}
+/*Estilos del nav de los dashboards*/
 
 .dashboard-nav{
     width: 20%;
@@ -142,14 +149,13 @@
     margin-left: 9%;
 }
 .dashboard-nav-item{
-    /* margin-left: 20%;
-    margin-top: 7%; */
     padding: 5%;
 }
 
 .dashboard-nav-item:hover{
     background: rgb(37,39,53);
 }
+
 #name{
     margin-bottom: 6%;
     margin-left: 23%;
@@ -161,7 +167,8 @@
     margin-left: 20%;
     margin-top: 7%;
 }
-ul{
+
+.dashboard-nav-ul{
     list-style: none;
     margin-top: 5%;
 }
