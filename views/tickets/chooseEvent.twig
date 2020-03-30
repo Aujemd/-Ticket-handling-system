@@ -4,7 +4,7 @@
 	<div class="col-md-10 h-100 d-flex justify-content-center align-items-center flex-wrap">
 		<form action="{{url}}Event/Choose" method="post" class="d-flex justify-content-center align-items-center flex-wrap w-100">
             <h1 class="gris-text mb-4">Escoge el evento al que quieres registrar el boleto</h1>
-			<select class="morado-claro input rounded w-100 text-white mb-4" name="eventId">
+			<select class="morado-claro input w-100 text-white mb-4" name="eventId">
 				<option selected value="">Nombre del evento ....</option>
 				{% for event in events %}
 					<option value={{event.id}}>{{event.eventName}}</option>
