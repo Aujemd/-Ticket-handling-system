@@ -7,8 +7,10 @@ use Aura\Router\RouterContainer;
 
 session_start();//Inicializa la sesión
 
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__.'/..');
-$dotenv->load(); 
+if(file_exists("../.env")){
+    $dotenv = Dotenv\Dotenv::createMutable(__DIR__ . '/..');
+    $dotenv->load();
+}
 
 if(getenv('DEBUG') == 'true'){
     ini_set('display_errors', 1);
