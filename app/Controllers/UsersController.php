@@ -44,9 +44,8 @@ class UsersController extends BaseController{
                     return new RedirectResponse(getenv('BASE_URL').'Dashboard/User');
                 }
             }
-        return $this->renderHTML('index.twig',[
-            'url' => getenv('BASE_URL'),
-        ]); 
+
+        return new RedirectResponse(getenv('BASE_URL'));
     }
 
     public function getUsersLogoutAction($request){
