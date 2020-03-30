@@ -1,14 +1,12 @@
 {% extends "users/dashboard.twig" %}
 
 {% block mostrar %}
-	<div >
-		<div >
-			<h2 >Propietario: {{ticket.user.names}}</h2>
-			<h3 >Evento: {{ticket.eventName}}</h3>
-			<h3 >Serial: {{ticket.serial}}</h3>
-			<h3 >Ubicación: {{ticket.ubication}}</h3>
-			<h3 >Fecha: {{ticket.date}}</h3>
-			<a  href="{{url}}" role="button">Ir al Menu Principal</a>
-		</div>
+	<div class="ticketShow-container flex wrap morado-claro text-white rounded">
+			<h2 class="w-100">Propietario: {{ticket.user.names}}</h2>
+			<p class="w-100">Evento: {{ticket.eventName}}</p>
+			<p class="w-100">Serial: {{ticket.serial}}</p>
+			<p class="w-100">Ubicación: {{ticket.ubication}}</p>
+			<p class="w-100">Fecha: {{ticket.date}}</p>
+			<a  href="{{url}}" role="button"class="w-100 morado-mas-claro-text ticketShow-anchor">Ir al Menu Principal</a>
 	</div>
 {% endblock %}
