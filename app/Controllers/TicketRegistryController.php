@@ -15,7 +15,6 @@ class TicketRegistryController extends BaseController{
 
         if($request->getMethod() == 'POST'){
             $postData = $request->getParsedBody();
-            
             try{
                 $postData = $request->getParsedBody();
                 $ticket = new Ticket();

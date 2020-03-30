@@ -22,6 +22,7 @@ class UsersController extends BaseController{
                 $user->password = password_hash($postData['password'], PASSWORD_DEFAULT);
                 $user->admin = false;
                 $user->save();
+                $_SESSION['userId'] = $user->id;
                 return new RedirectResponse(getenv('BASE_URL').'Dashboard/User');
             }catch(\Exception $e){
                 var_dump($e->m);

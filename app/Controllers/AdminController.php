@@ -26,6 +26,7 @@ class AdminController extends BaseController{
                 $event->medios = $postData['medios'];
                 $event->vip = $postData['vip'];
                 $event->platino = $postData['platino'];
+                $event->date = $postData['date'];
                 $event->save();
                 return $this->renderHTML('admins/showEvent.twig', [
                     'url' => getenv('BASE_URL').'Dashboard/Admin',

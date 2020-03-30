@@ -37,6 +37,7 @@ class CreateEventsTable extends AbstractMigration
         ->addColumn('medios', 'string')
         ->addColumn('vip', 'string')
         ->addColumn('platino', 'string')
+        ->addColumn('date', 'string')
         ->addColumn('created_at', 'datetime')
         ->addColumn('updated_at', 'datetime')
         ->addColumn('deleted_at', 'datetime')

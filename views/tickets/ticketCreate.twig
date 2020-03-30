@@ -3,16 +3,16 @@
 	<div class="col-md-4 rounded h-75 fondo-oscuro-medio d-flex justify-content-center align-items-center flex-wrap">
 		<form action="{{url}}TicketRegistry" method="post" class="d-flex justify-content-center align-items-center flex-wrap">
 			<p class="text-white mb-4">Registrar Boleto</p>
-			<input name="serial" type="text" class="fondo-oscuro-medio input w-100 rounded text-white mb-4" placeholder="Serial">
-			<input name="eventName" type="text" class="fondo-oscuro-medio input w-100 rounded text-white mb-4" placeholder="Nombre del evento">
-			<input name="date" type="text" class="fondo-oscuro-medio input w-100 rounded text-white mb-4" placeholder="Fecha DD/MM/AA">
+			<input name="serial" type="text" class="fondo-oscuro-medio input w-100 rounded morado-text mb-4"readonly="readonly" value={{serial}}>
+			<input name="eventName" type="text" class="fondo-oscuro-medio input w-100 rounded morado-text mb-4"readonly="readonly" value="{{event.eventName}}">
+			<input name="date" type="text" class="fondo-oscuro-medio input w-100 rounded morado-text mb-4"readonly="readonly" value={{event.date}}>
 			<select class="fondo-oscuro-medio input rounded w-100 morado-text mb-4" name="ubication">
-				<option selected disabled value="">Ubicación</option>
+				<option selected disabled required >Elige la ubicación</option>
 				<option value="Altos">Altos</option>
 				<option value="Medios">Medios</option>
 				<option value="VIP">VIP</option>
 				<option value="Platino">Platino</option>
-			</select>
+			</select>		
 			<button type="submit" class="morado-claro input w-100 rounded text-white">Registrar</button>
 		</form>
 	</div>

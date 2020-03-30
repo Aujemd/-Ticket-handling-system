@@ -96,6 +96,10 @@ $map->post('updateTicket', getenv('BASE_URL').'Update/Ticket',[
     'controller' => 'App\Controllers\TicketsController',
     'action' => 'getTicketsAction',
 ]);
+$map->post('chooseEvent', getenv('BASE_URL').'Event/Choose',[
+    'controller' => 'App\Controllers\DashboardController',
+    'action' => 'getDashboardUserAction',
+]);
 
 $matcher = $routerContainer->getMatcher();
 
