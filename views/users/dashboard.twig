@@ -1,36 +1,29 @@
 {% extends "layout.twig" %}
 
 {% block content %}
-	<div >
-		<div >
-			<p >USUARIO</p>
-			<p >{{user.names}}</p>
-			<ul >
-			<p >MENU</p>
-				{% if user.admin == true %}
-				<li >
-					<a href="{{urlInit}}">Inicio</a>
-				</li>
-				{% endif %}
-				{% if user.admin == false %}
-				<li >
-					<a  href="{{urlInit}}">Inicio</a>
-				</li>
-				{% endif %}
-				{% if user.admin == true %}
-				<li >
-					<a  href="{{url}}Event/Create">Registrar Eventos</a>
-				</li>
-				{% endif %}
-				<li >
-					<a  href="{{url}}Logout">Cerrar Sesión</a>
-				</li>
-			</ul>
-		</div>
-		<div >
-			<div >
-          {% block mostrar %}{% endblock %}
+	<div class="maxAltura w-100 flex">
+		<div class=" h-100 dashboard-nav fondo-oscuro-medio">
+			<div class="dashboard-nav-content">
+				<p class="dashboard-nav-label text-white small-size">USUARIO</p>
+				<p class="gris-text" id="name" >{{user.names}}</p>
+				<p class="dashboard-nav-label text-white small-size">MENU</p>
+				<ul>
+					<li class="dashboard-nav-item">
+						<a href="{{urlInit}}" class="gris-text dashboard-nav-link">Inicio</a>
+					</li>
+					{% if user.admin == true %}
+						<li class="dashboard-nav-item">
+							<a href="{{url}}Event/Create" class="gris-text dashboard-nav-link">Registrar Eventos</a>
+						</li>
+					{% endif %}
+					<li class="dashboard-nav-item">
+						<a href="{{url}}Logout" class="gris-text dashboard-nav-link">Cerrar Sesión</a>
+					</li>
+				</ul>
 			</div>
+		</div>
+		<div class="dashboard-content h-100">
+			{% block mostrar %}{% endblock %}
 		</div>
 	</div>
 {% endblock %}

@@ -1,19 +1,57 @@
+*{
+    box-sizing: border-box;
+    font-family: system-ui;
+    margin: 0;
+    padding: 0;
+}
+
+.maxAltura{
+    height: 100vh;
+}
+
 .fondo-oscuro{
     background-color: rgb(37,39,53);
+}
+
+.flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrap{
+    flex-wrap: wrap;
+}
+.w-100{
+    width: 100%;
+}
+
+.h-100{
+    height: 100%;
+}
+
+.borde{
+    border: 1px solid aqua;
 }
 
 .fondo-oscuro-medio{
     background-color: rgb(42, 49, 66);
 }
-.maxAltura{
-    height: 100vh;
+
+.login-container{
+    width: 30%;
+    height: 80%;
 }
 
-*{
-    box-sizing: border-box;
-    font-family: system-ui;
-    
+.signup-container{
+    height: 80%;
+    width: 60%;
+}
 
+.index-container{
+    margin: 2%;
+    flex-wrap: wrap;
+    flex-direction: column;
 }
 
 .input{
@@ -22,6 +60,35 @@
     border: 1px solid rgb(98, 110, 212);
     height: 2.5em;
     padding-left: 1em;
+}
+
+.input.login{
+    margin-top: 5%;
+    width: 80%;
+}
+
+.button{
+    border: 0;
+    padding: 3%;
+}
+
+.button.login{
+    width: 80%;
+    margin-top: 5%;
+}
+
+.button-signup{
+    width: 45%;
+    margin-left: 2%;
+    padding: 1%;
+    border: 0;
+}
+
+.text-white{
+    color: whitesmoke;
+}
+.rounded{
+    border-radius: 2px;
 }
 
 .morado-claro{
@@ -36,9 +103,14 @@
     color: rgb(98, 110, 212);
 }
 
-.input.SignUp{
-    border: 0;
-    border-bottom: 1px solid rgb(98, 110, 212);
+.input-signup-container{
+    width: 90%;
+}
+
+.input.signup{
+    margin-top: 3%;
+    width: 45%;
+    margin-left: 2%;
 }
 
 .gris-text{
@@ -50,5 +122,46 @@
 }
 
 .small-size{
-    font-size: .1em;
+    font-size: .8em;
+}
+
+.dashboard-nav{
+    width: 20%;
+}
+
+.dashboard-content{
+    width: 80%;
+}
+
+.dashboard-nav-content{
+    width: 100%;
+    margin-top: 30%;
+}
+
+.dashboard-nav-label{
+    margin-left: 9%;
+}
+.dashboard-nav-item{
+    /* margin-left: 20%;
+    margin-top: 7%; */
+    padding: 5%;
+}
+
+.dashboard-nav-item:hover{
+    background: rgb(37,39,53);
+}
+#name{
+    margin-bottom: 6%;
+    margin-left: 23%;
+    margin-top: 6%;
+}
+
+.dashboard-nav-link{
+    text-decoration: none;
+    margin-left: 20%;
+    margin-top: 7%;
+}
+ul{
+    list-style: none;
+    margin-top: 5%;
 }
