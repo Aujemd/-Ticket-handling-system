@@ -11,6 +11,7 @@
 
 *{
     box-sizing: border-box;
+    font-family: system-ui;
 }
 
 .input{
@@ -44,4 +45,8 @@
 
 .morado-mas-claro-text{
     color: rgb(177, 178, 228);
+}
+
+.small-size{
+    font-size: .1em;
 }

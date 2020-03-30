@@ -3,9 +3,10 @@
 {% block content %}
 	<div class="row maxAltura m-0">
 		<div class="col-md-2 w-100 h-100 m-0 fondo-oscuro-medio">
-			<p class="gris-text mt-5 mb-5">Bienvenid@,
-				{{user.names}}</p>
+			<p class="text-white small-size">USUARIO</p>
+			<p class="gris-text mb-5">{{user.names}}</p>
 			<ul class="nav flex-column w-100">
+			<p class="text-white small-size">MENU</p>
 				{% if user.admin == true %}
 				<li class="nav-item">
 					<a class="nav-link gris-text" href="{{urlInit}}">Inicio</a>
