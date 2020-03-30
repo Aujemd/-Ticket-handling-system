@@ -37,14 +37,21 @@ class UsersController extends BaseController{
                     if($postData['password'] == $user->password){
                         $_SESSION['userId'] = $user->id;
                         return new RedirectResponse(getenv('BASE_URL').'Dashboard/Admin');
+                    }else{
+                        return new RedirectResponse(getenv('BASE_URL'));
+
                     }
                 }
                 if(\password_verify($postData['password'], $user->password)){
                     $_SESSION['userId'] = $user->id;
                     return new RedirectResponse(getenv('BASE_URL').'Dashboard/User');
+                }else{
+                    return new RedirectResponse(getenv('BASE_URL'));
                 }
+            }else{
+                return new RedirectResponse(getenv('BASE_URL'));
             }
-        return new RedirectResponse(getenv('BASE_URL'));
+
     }
 
     public function getUsersLogoutAction($request){
