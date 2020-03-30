@@ -109,6 +109,7 @@ $route = $matcher->match($request);
 
 if(!$route){
     echo 'No Route';
+    var_dump( $request->getUri()->getPath());
 }else{
     $handlerData = $route->handler;
     $controllerName = $handlerData['controller'];
