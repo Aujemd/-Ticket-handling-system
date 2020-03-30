@@ -44,7 +44,6 @@ class UsersController extends BaseController{
                     return new RedirectResponse(getenv('BASE_URL').'Dashboard/User');
                 }
             }
-
         return new RedirectResponse(getenv('BASE_URL'));
     }
 
