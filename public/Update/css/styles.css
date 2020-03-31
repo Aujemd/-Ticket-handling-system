@@ -261,3 +261,10 @@
 .table-btn-eliminar{
     background: rgb(236,69,97);
 }
+
+/*Estilos de la view eventCreate */
+
+.eventCreate-container{
+    width: 40%;
+    padding: 2%;
+}

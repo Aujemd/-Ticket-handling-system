@@ -1,15 +1,15 @@
 {% extends "users/dashboard.twig" %}
 
 {% block mostrar %}
-	<div >
-		<div >
-			<h2 >Nombre del Evento: {{event.eventName}}</h2>
-			<h3 >Cantidad de Altos: {{event.altos}}</h3>
-			<h3 >Cantidad de Medios: {{event.medios}}</h3>
-			<h3 >Cantidad de VIP: {{event.vip}}</h3>
-			<h3 >Cantidad de Platino: {{event.platino}}</h3>
-			<h3 >Fecha: {{event.date}}</h3>
-			<a  href="{{urlInit}}" role="button">Ir al Menu Principal</a>
+	
+		<div class="ticketShow-container flex wrap morado-claro text-white rounded">
+			<h2 class="w-100">Nombre del Evento: {{event.eventName}}</h2>
+			<h3 class="w-100">Cantidad de Altos: {{event.altos}}</h3>
+			<h3 class="w-100">Cantidad de Medios: {{event.medios}}</h3>
+			<h3 class="w-100">Cantidad de VIP: {{event.vip}}</h3>
+			<h3 class="w-100">Cantidad de Platino: {{event.platino}}</h3>
+			<h3 class="w-100">Fecha: {{event.date}}</h3>
+			<a  href="{{urlInit}}" role="button"class="w-100 morado-mas-claro-text ticketShow-anchor">Ir al Menu Principal</a>
 		</div>
-	</div>
+	
 {% endblock %}

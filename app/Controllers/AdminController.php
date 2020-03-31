@@ -30,7 +30,7 @@ class AdminController extends BaseController{
                 $event->date = $postData['date'];
                 $event->save();
                 return $this->renderHTML('admins/showEvent.twig', [
-                    'url' => getenv('BASE_URL').'Dashboard/Admin',
+                    'url' => getenv('BASE_URL'),
                     'event' => $event,
                     'user' => $user,
                     'urlInit' => getenv('URL_INIT_ADMIN'),

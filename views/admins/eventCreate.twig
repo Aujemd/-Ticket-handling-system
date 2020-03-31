@@ -1,16 +1,14 @@
 {% extends "users/dashboard.twig" %}
 
 {% block mostrar %}
-	<div >
-		<form action="{{url}}Event/Create" method="post" >
-			<p >Registrar Evento</p>
-			<input name="eventName" type="text"  placeholder="Nombre del evento">
-			<input name="altos" type="number"  placeholder="Cantidad Disponible en Altos">
-			<input name="medios" type="number"  placeholder="Cantidad Disponible en Medios">
-			<input name="vip" type="number"  placeholder="Cantidad Disponible en VIP">
-			<input name="platino" type="number"  placeholder="Cantidad Disponible en Platino">
-			<input name="date" type="text"  placeholder="Fecha DD/MM/AA">
-			<button type="submit" >Registrar</button>
+		<form action="{{url}}Event/Create" method="post" class="fondo-oscuro-medio flex rounded eventCreate-container wrap">
+			<p class="text-white w-100">Registrar Evento</p>
+			<input name="eventName" type="text"  placeholder="Nombre del evento" class="input login fondo-oscuro-medio rounded text-white">
+			<input name="altos" type="number"  placeholder="Cantidad Disponible en Altos" class="input login fondo-oscuro-medio rounded text-white">
+			<input name="medios" type="number"  placeholder="Cantidad Disponible en Medios" class="input login fondo-oscuro-medio rounded text-white">
+			<input name="vip" type="number"  placeholder="Cantidad Disponible en VIP" class="input login fondo-oscuro-medio rounded text-white">
+			<input name="platino" type="number"  placeholder="Cantidad Disponible en Platino" class="input login fondo-oscuro-medio rounded text-white">
+			<input name="date" type="text"  placeholder="Fecha DD/MM/AA" class="text-white input login fondo-oscuro-medio rounded">
+			<button type="submit" class="morado-claro text-white rounded ticketCreate-button button">Registrar</button>
 		</form>
-	</div>
 {% endblock %}
