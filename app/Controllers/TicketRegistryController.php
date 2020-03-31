@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-use App\Models\{Ticket};
+use App\Models\{Ticket, Event};
 use App\Models\{User};
 use Illuminate\Http\Request;
 
@@ -20,9 +20,11 @@ class TicketRegistryController extends BaseController{
                 $ticket = new Ticket();
                 $ticket->serial = $postData['serial'];
                 $ticket->eventName = $postData['eventName'];
+                $event = Event::where('eventName', $postData['eventName'])->first();
                 $ticket->date = $postData['date'];
                 $ticket->ubication = $postData['ubication'];
                 $ticket->user_id = $_SESSION['userId'];
+                $ticket->event_id = $event->id;
                 $ticket->save();
                 return $this->renderHTML('tickets/ticketShow.twig', [
                     'url' => getenv('BASE_URL'),

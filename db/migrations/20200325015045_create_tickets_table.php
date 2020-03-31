@@ -37,6 +37,7 @@ class CreateTicketsTable extends AbstractMigration
         ->addColumn('date', 'string')
         ->addColumn('ubication', 'string')
         ->addColumn('user_id', 'string')
+        ->addColumn('event_id', 'string')
         ->addColumn('created_at', 'datetime')
         ->addColumn('updated_at', 'datetime')
         ->addColumn('deleted_at', 'datetime')

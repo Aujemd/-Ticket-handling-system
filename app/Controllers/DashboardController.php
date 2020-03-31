@@ -38,14 +38,26 @@ class DashboardController extends BaseController{
         ]);
     }
 
-    public function getDashboardAdminAction(){
+    public function getDashboardAdminAction($request){
+
+        $params = $request->getQueryParams();
+        
+        $events = Event::latest()->take(4)->get();
+
         $tickets = Ticket::all();
+
+        if(isset($params['eventName'])){
+            $event = Event::where('eventName', $params['eventName'])->first();
+            $tickets = $event->tickets;
+        }
+        
         $user = User::where('id', $_SESSION['userId'])->first();
         return $this->renderHTML('admins/dashboard.twig', [
             'tickets' => $tickets,
             'url' => getenv('BASE_URL'),
             'user' => $user,
             'urlInit' => getenv('URL_INIT_ADMIN'),
+            'events' => $events,
         ]);
     }
 }

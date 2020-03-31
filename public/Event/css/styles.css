@@ -7,6 +7,10 @@
     padding: 0;
 }
 
+.main-container{
+    flex-direction: column;
+}
+
 .maxAltura{
     height: 100vh;
 }
@@ -235,13 +239,28 @@
 
 /*Estilos del dashboard de los admins*/
 
+.filter-container{
+    justify-content: flex-start;
+}
+.filter-block{
+    width: 20%;
+    margin-left: 3%;
+    padding-left: 4%;
+    padding-right: 2%;
+    padding-top: .5%;
+    padding-bottom: .5%;
+    text-decoration: none;
+    height: 120px;
+    text-align: left;
+    align-items: center;
+}
 .celda{
     padding: .7%;
 }
 
 .table-container{
     width: 98%;
- 
+    margin-top: 3%;
 }
 
 .table-title{
