@@ -25,7 +25,7 @@ class TicketRegistryController extends BaseController{
                 $ticket->user_id = $_SESSION['userId'];
                 $ticket->save();
                 return $this->renderHTML('tickets/ticketShow.twig', [
-                    'url' => getenv('BASE_URL').'Dashboard/User',
+                    'url' => getenv('BASE_URL'),
                     'ticket' => $ticket,
                     'user' => $user,
                     'urlInit' => getenv('URL_INIT_USER'),

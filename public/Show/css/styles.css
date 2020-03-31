@@ -236,11 +236,11 @@
 /*Estilos del dashboard de los admins*/
 
 .celda{
-    padding: 1%;
+    padding: .7%;
 }
 
 .table-container{
-    width: 95%;
+    width: 98%;
     padding: 1%;
     text-align: center;
 }
