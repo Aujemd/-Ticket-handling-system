@@ -18,6 +18,11 @@ if(getenv('DEBUG') == 'true'){
     error_reporting(E_ALL);
 }
 
+var_dump(getenv('DB_DRIVER'));
+var_dump(getenv('DB_HOST'));
+var_dump(getenv('DB_NAME'));
+var_dump(getenv('DB_USER'));
+var_dump(getenv('DB_PASS'));
 $capsule = new Capsule;
 
 $capsule->addConnection([
