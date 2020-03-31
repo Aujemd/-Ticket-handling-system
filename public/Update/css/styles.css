@@ -241,6 +241,16 @@
 
 .table-container{
     width: 98%;
+ 
+}
+
+.table-title{
+    margin-left: 5%;
+    margin-bottom: 1%;
+}
+
+.table{
+    width: 100%;
     padding: 1%;
     text-align: center;
 }

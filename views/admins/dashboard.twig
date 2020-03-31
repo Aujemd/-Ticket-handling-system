@@ -1,31 +1,34 @@
 {% extends "users/dashboard.twig" %}
 
 {% block mostrar %}
-  <table class="table-container rounded fondo-oscuro-medio">
-    <thead>
-      <tr>
-        <th scope="col" class="gris-text celda">Nombres</th>
-        <th scope="col" class="gris-text celda">Apellidos</th>
-        <th scope="col" class="gris-text celda">Cédula</th>
-        <th scope="col" class="gris-text celda">Nombre del Evento</th>
-        <th scope="col" class="gris-text celda">Ubicación</th>
-        <th scope="col" class="gris-text celda">Acciones</th>
-      </tr>
-    </thead>
-    <tbody>
-      {% for ticket in tickets %}
-      <tr>
-        <td class="gris-text celda">{{ticket.user.names}}</td>
-        <td class="gris-text celda">{{ticket.user.lastnames}}</td>
-        <td class="gris-text celda">{{ticket.user.vid}}</td>
-        <td class="gris-text celda">{{ticket.eventName}}</td>
-        <td class="gris-text celda">{{ticket.ubication}}</td>
-        <td class="gris-text celda">
-        <a  href="{{url}}Show/Ticket?id={{ticket.id}}" role="button" class="table-btn-ver text-white rounded btn button">Ver</a>
-        <a  href="{{url}}Edit/Ticket?id={{ticket.id}}" role="button" class="table-btn-editar text-white rounded btn button">Editar</a>
-        <a  href="{{url}}Delete/Ticket?id={{ticket.id}}" role="button" class="table-btn-eliminar text-white rounded btn button">Eliminar</a></td>
-      </tr>
-      {% endfor %}
-    </tbody>
-  </table>
+<div class="table-container">
+    <p class="text-white table-title">Registros de asistencia</p>
+    <table class="table rounded fondo-oscuro-medio">
+      <thead>
+        <tr>
+          <th scope="col" class="gris-text celda">Nombres</th>
+          <th scope="col" class="gris-text celda">Apellidos</th>
+          <th scope="col" class="gris-text celda">Cédula</th>
+          <th scope="col" class="gris-text celda">Nombre del Evento</th>
+          <th scope="col" class="gris-text celda">Ubicación</th>
+          <th scope="col" class="gris-text celda">Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for ticket in tickets %}
+        <tr>
+          <td class="gris-text celda">{{ticket.user.names}}</td>
+          <td class="gris-text celda">{{ticket.user.lastnames}}</td>
+          <td class="gris-text celda">{{ticket.user.vid}}</td>
+          <td class="gris-text celda">{{ticket.eventName}}</td>
+          <td class="gris-text celda">{{ticket.ubication}}</td>
+          <td class="gris-text celda">
+          <a  href="{{url}}Show/Ticket?id={{ticket.id}}" role="button" class="table-btn-ver text-white rounded btn button">Ver</a>
+          <a  href="{{url}}Edit/Ticket?id={{ticket.id}}" role="button" class="table-btn-editar text-white rounded btn button">Editar</a>
+          <a  href="{{url}}Delete/Ticket?id={{ticket.id}}" role="button" class="table-btn-eliminar text-white rounded btn button">Eliminar</a></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+</div>
 {% endblock %}
