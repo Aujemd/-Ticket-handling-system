@@ -1,19 +1,19 @@
 {% extends "users/dashboard.twig" %}
 {% block mostrar %}
-	<div >
-		<form action="{{url}}Update/Ticket?id={{ticket.id}}" method="post">
-			<p >Editar Boleto</p>
-			<input name="serial" type="text"  value="{{ticket.serial}}">
-			<input name="eventName" type="text"  value="{{ticket.eventName}}">
-			<input name="date" type="text"  readonly="readonly" value="{{ticket.date}}">
-			<select  name="ubication">
+	<div class="fondo-oscuro-medio flex wrap ticketCreate-Container rounded">
+		<form action="{{url}}Update/Ticket?id={{ticket.id}}" method="post" class="flex wrap">
+			<p class="text-white w-100">Editar Boleto</p>
+			<input name="serial" type="text"  value="{{ticket.serial}}" class="input login fondo-oscuro-medio rounded text-white">
+			<input name="eventName" type="text"  value="{{ticket.eventName}}" class="input login fondo-oscuro-medio rounded text-white">
+			<input name="date" type="text"  readonly="readonly" value="{{ticket.date}}" class="input login fondo-oscuro-medio rounded text-white">
+			<select  name="ubication" class="fondo-oscuro-medio rounded input morado-text ticketCreate-select">
 				<option selected value="{{ticket.ubication}}">{{ticket.ubication}}</option>
 				<option value="Altos">Altos</option>
 				<option value="Medios">Medios</option>
 				<option value="VIP">VIP</option>
 				<option value="Platino">Platino</option>
 			</select>
-			<button type="submit" >Registrar</button>
+			<button type="submit" class="morado-claro text-white rounded ticketCreate-button button">Registrar</button>
 		</form>
 	</div>
 {% endblock %}
