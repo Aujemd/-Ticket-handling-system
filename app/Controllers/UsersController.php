@@ -25,7 +25,7 @@ class UsersController extends BaseController{
                 $_SESSION['userId'] = $user->id;
                 return new RedirectResponse(getenv('BASE_URL').'Dashboard/User');
             }catch(\Exception $e){
-                var_dump($e->m);
+                var_dump($e->getMessage());
             } 
     }
 
