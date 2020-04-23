@@ -1,6 +1,8 @@
 # Ticket-handling-system
 
-Live demo: https://app-system-of-tickets.herokuapp.com/
+### Proyecto para la materia de programación II de la Unet 2020 :rocket: 
+
+:mag_right: Live demo: https://app-system-of-tickets.herokuapp.com/
 
 Para probar la cuenta en modo administrador usar la cuenta:
 
